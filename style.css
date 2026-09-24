@@ -1,0 +1,150 @@
+body {
+    background-color: white;
+    margin: 0;
+}
+
+.navbar {
+    background-color: rgb(173, 203, 227);
+    padding: 15px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.navbar a:hover {
+    color: #ccc;
+}
+
+.welkom-box {
+    width: 400px;
+    padding: 20px;
+    background-color: rgb(173, 203, 227);
+    border: 1px solid #fff;
+    border-radius: 10px;
+    text-align: center;
+    margin: 30px;
+}
+.welkom-box h1 {
+    color: #fff;
+    margin-bottom: 25px;
+}
+.welkom-box p {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.welkom-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+}
+
+.btn {
+    background-color: white;
+    color: rgb(173, 203, 227);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: #eee;
+}
+
+.foto-box {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(173, 203, 227);
+    border-radius: 10px;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 150px;
+    right: 50px;
+}
+
+.foto-box img {
+    width: 60%; 
+    height: auto;
+    border-radius: 10px;
+}
+.blog-box {
+    width: 700px;
+    background-color: rgb(173, 203, 227);
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 30px;
+}
+.blog-preview {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.blog-preview p {
+    margin: 5px 0 0;
+    color: #333;
+}
+/* OVER MIJ BOX */
+.content-box {
+    width: 700px;
+    background-color: rgb(173, 203, 227);
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 30px;
+}
+
+.content-box h1 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.content-box p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.overmij-foto-box {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(173, 203, 227);
+    border-radius: 10px;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* positie rechts zoals homepage */
+    position: absolute;
+    top: 150px;
+    right: 50px;
+}
+
+.overmij-foto-box img {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
+
