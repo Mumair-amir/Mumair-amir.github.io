@@ -38,14 +38,40 @@
 
         </section>
 
-        <section class="blog-box">
-            <h2>Blog</h2>
+<section class="blog-box" id="homeBlogBox" style="width: 100%;">
 
-            <article class="blog-preview">
-                <h3>Blog 1 — Binnenkort beschikbaar</h3>
-                <p>Een kijkje achter de schermen van mijn projecten.</p>
-            </article>
-        </section>
+    <h2 id="homeBlogTitle">Waarom ik hbo‑ICT heb gekozen</h2>
+
+    <p id="homeBlogText">
+        Ga naar blog voor meer!
+    </p>
+
+</section>
+
+<script>
+    let currentHomeBlog = 1;
+
+    const homeBlogTitle = document.getElementById("homeBlogTitle");
+    const homeBlogText = document.getElementById("homeBlogText");
+
+    function switchHomeBlog() {
+        if (currentHomeBlog === 1) {
+            currentHomeBlog = 2;
+
+            homeBlogTitle.textContent = "Hoe ik projecten aanpak";
+            homeBlogText.textContent =
+                "Ga naar blog voor meer!";
+        } else {
+            currentHomeBlog = 1;
+
+            homeBlogTitle.textContent = "Waarom ik hbo‑ICT heb gekozen";
+            homeBlogText.textContent =
+                "Ga naar blog voor meer!";
+        }
+    }
+
+    setInterval(switchHomeBlog, 4000); //AI//
+</script>
 
     </main>
 
