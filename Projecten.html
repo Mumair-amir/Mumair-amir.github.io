@@ -4,18 +4,84 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projecten</title>
 </head>
 <body>
-     <nav class="navbar">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-       <li><a href="Over mij.html">Over mij</a></li>
-       <li><a href="Projecten.html">Projecten</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
-    </ul>
-</nav>
-    <h1>Projecten</h1>
+
+<header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Over mij.html">Over mij</a></li>
+            <li><a href="Projecten.html">Projecten</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="top-flex">
+
+        <!-- PROJECT BOX -->
+        <section class="projects-box" id="projectBox">
+            <h1 id="projectTitle">Project 1 — Smart Telefoon Tas</h1>
+            <p id="projectText">
+                Een slimme telefoontas die automatisch detecteert wanneer een telefoon wordt geplaatst.
+                De tas registreert aanwezigheid, tijdstippen en koppelt deze gegevens aan een database.
+                Ideaal voor scholen of werkplekken waar aanwezigheid gecontroleerd moet worden.
+            </p>
+
+            <section class="welkom-buttons">
+                <button class="btn" id="nextBtn">Volgende ➜</button>
+            </section>
+        </section>
+
+        <!-- FOTO BOX -->
+        <aside class="foto-box">
+            <img id="projectImage" src="smarttas.jpeg" alt="Smart Telefoon Tas">
+        </aside>
+
+    </section>
+
+</main>
+
+<script>
+    let currentProject = 1;
+
+    const title = document.getElementById("projectTitle");
+    const text = document.getElementById("projectText");
+    const image = document.getElementById("projectImage");
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+        if (currentProject === 1) {
+            currentProject = 2;
+
+            title.textContent = "Project 2 — Hotel Simulatie";
+            text.textContent =
+                "Een uitgebreide simulatie van een hotel waarin verschillende events kunnen plaatsvinden. " +
+                "Gasten checken in en uit, schoonmakers onderhouden kamers, klanten hebben voedsel nodig, " +
+                "en noodsituaties zoals brand of evacuatie kunnen optreden. De simulatie bevat een event-systeem " +
+                "en movement-engine.";
+
+            image.src = "hotel.jpeg";
+            image.alt = "Hotel Simulatie";
+
+        } else {
+            currentProject = 1;
+
+            title.textContent = "Project 1 — Smart Telefoon Tas";
+            text.textContent =
+                "Een slimme telefoontas die automatisch detecteert wanneer een telefoon wordt geplaatst. " +
+                "De tas registreert aanwezigheid, tijdstippen en koppelt deze gegevens aan een database. " +
+                "Ideaal voor scholen of werkplekken waar aanwezigheid gecontroleerd moet worden.";
+
+            image.src = "smarttas.jpeg";
+            image.alt = "Smart Telefoon Tas";
+        }
+    });
+</script>
+
 </body>
 </html>

@@ -1,63 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: white;
     margin: 0;
+    background-color: white;
+    font-family: system-ui, sans-serif;
+    color: #222;
+    line-height: 1.5;
 }
 
 .navbar {
+    width: 100%;
     background-color: rgb(173, 203, 227);
-    padding: 15px;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    padding: 1%;
 }
 
 .navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 100%;
     display: flex;
-    gap: 20px;
+    gap: 2%;
+    flex-wrap: wrap;
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .navbar a:hover {
-    color: #ccc;
+    color: #e6e6e6;
 }
 
-.welkom-box {
-    width: 400px;
-    padding: 20px;
+main {
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+
+.top-flex {
+    width: 100%;
+    display: flex;
+    gap: 5%;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.welkom-box,
+.content-box,
+.projects-box,
+.blog-box {
+    width: 60%;
     background-color: rgb(173, 203, 227);
-    border: 1px solid #fff;
-    border-radius: 10px;
-    text-align: center;
-    margin: 30px;
+    border: 0.1rem solid #fff;
+    border-radius: 1rem;
+    padding: 2%;
 }
-.welkom-box h1 {
+
+.welkom-box h1,
+.content-box h1,
+.projects-box h1,
+.blog-box h1,
+.blog-box h2 {
     color: #fff;
-    margin-bottom: 25px;
+    margin-bottom: 1rem;
 }
-.welkom-box p {
+
+.welkom-box p,
+.content-box p,
+.projects-box p,
+.blog-box p {
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
 .welkom-buttons {
-    margin-top: 20px;
+    margin-top: 1rem;
     display: flex;
-    gap: 60px;
-    justify-content: center;
+    gap: 2rem;
 }
 
 .btn {
     background-color: white;
     color: rgb(173, 203, 227);
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
     text-decoration: none;
     font-weight: bold;
     transition: 0.2s;
@@ -67,84 +103,114 @@ body {
     background-color: #eee;
 }
 
-.foto-box {
-    width: 400px;
-    height: 400px;
+.foto-box,
+.overmij-foto-box {
+    width: 30%;
+    height: 40%;
     background-color: rgb(173, 203, 227);
-    border-radius: 10px;
-    border: 1px solid #fff;
+    border-radius: 1rem;
+    border: 0.1rem solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    position: absolute;
-    top: 150px;
-    right: 50px;
 }
 
-.foto-box img {
-    width: 60%; 
+.foto-box img,
+.overmij-foto-box img {
+    width: 80%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 1rem;
 }
-.blog-box {
-    width: 700px;
-    background-color: rgb(173, 203, 227);
-    border: 1px solid #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px 30px;
+
+.blog-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
 }
-.blog-preview {
+
+article.blog-preview {
     background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    padding: 2%;
+    border-radius: 1rem;
 }
-.blog-preview p {
-    margin: 5px 0 0;
+
+article.blog-preview h3 {
+    margin: 0 0 1%;
+    color: #222;
+}
+
+article.blog-preview p {
+    margin: 0;
     color: #333;
 }
-/* OVER MIJ BOX */
-.content-box {
-    width: 700px;
-    background-color: rgb(173, 203, 227);
-    border: 1px solid #fff;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 30px;
-}
 
-.content-box h1 {
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.content-box p {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
-
-.overmij-foto-box {
-    width: 400px;
-    height: 400px;
-    background-color: rgb(173, 203, 227);
-    border-radius: 10px;
-    border: 1px solid #fff;
+.projects-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* positie rechts zoals homepage */
-    position: absolute;
-    top: 150px;
-    right: 50px;
+    flex-direction: column;
+    gap: 2%;
 }
 
-.overmij-foto-box img {
-    width: 70%;
-    height: auto;
-    border-radius: 10px;
+article.project-item {
+    background-color: white;
+    padding: 2%;
+    border-radius: 1rem;
 }
 
+article.project-item h2 {
+    margin: 0 0 1%;
+    color: #222;
+}
+
+article.project-item p {
+    margin: 0;
+    color: #333;
+}
+
+footer {
+    width: 100%;
+    margin-top: 3%;
+    padding: 2%;
+    background-color: rgb(173, 203, 227);
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .top-flex {
+        flex-direction: column;
+        gap: 3%;
+    }
+
+    .welkom-box,
+    .content-box,
+    .projects-box,
+    .blog-box {
+        width: 100%;
+    }
+
+    .foto-box,
+    .overmij-foto-box {
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar ul {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .welkom-box,
+    .content-box,
+    .projects-box,
+    .blog-box {
+        width: 90%;
+    }
+
+    .foto-box,
+    .overmij-foto-box {
+        width: 50%;
+        height: auto;
+    }
+}
