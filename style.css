@@ -151,6 +151,32 @@ article.blog-preview p {
     gap: 2%;
 }
 
+/* Projectfilter: zelfde font als de rest */
+.project-filter {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-filter label {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.project-filter select {
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    border: 2px solid white;
+    background-color: white;
+    color: #222;
+    font-size: 1.1rem;
+    font-family: inherit;
+    cursor: pointer;
+}
 article.project-item {
     background-color: rgb(173, 203, 227);
     border: 0.5rem solid #fff;
@@ -238,9 +264,6 @@ footer {
     }
 }
 
-/* ============================================
-   Formulier (buiten de media query!)
-   ============================================ */
 
 form.content-box {
     display: flex;
@@ -248,7 +271,6 @@ form.content-box {
     gap: 0.5rem;
 }
 
-/* Kop van het formulier: wit, net als "Contact" */
 form.content-box h2 {
     color: #fff;
     font-size: 1.6rem;
@@ -256,7 +278,6 @@ form.content-box h2 {
     margin: 0 0 1rem;
 }
 
-/* Labels: wit, net als de andere paragrafen */
 form.content-box label {
     color: #fff;
     font-size: 1.2rem;
@@ -265,7 +286,6 @@ form.content-box label {
     font-family: inherit;
 }
 
-/* Invoervelden */
 form.content-box input,
 form.content-box textarea {
     padding: 0.8rem;
@@ -283,14 +303,12 @@ form.content-box textarea {
     resize: vertical;
 }
 
-/* Ongeldige velden */
 form.content-box input[aria-invalid="true"],
 form.content-box textarea[aria-invalid="true"] {
     border: 2px solid #b00020;
     background-color: #fff5f5;
 }
 
-/* Foutmelding per veld: wit, valt op op het blauwe vlak */
 form.content-box span[role="alert"] {
     color: #fff;
     font-size: 1rem;
@@ -298,7 +316,6 @@ form.content-box span[role="alert"] {
     min-height: 1.2em;
 }
 
-/* Bevestiging / status */
 #form-status {
     margin-top: 1rem;
     font-weight: bold;
@@ -306,7 +323,6 @@ form.content-box span[role="alert"] {
     font-size: 1.1rem;
 }
 
-/* Verzendknop: precies zoals de LinkedIn/E-mail-knop */
 form.content-box button.btn {
     display: inline-block;
     background-color: white;
