@@ -41,12 +41,10 @@
 
         </div>
 
-        <section class="blog-box" id="homeBlogBox">
-            <h2>Uitgelicht blogbericht</h2>
-            <p><strong>Waarom ik hbo-ICT heb gekozen</strong></p>
-            <p>Ik vond het super interessant hoe je alles kunt maken met code…</p>
-            <a href="blog.html" class="btn">Lees meer →</a>
-        </section>
+    <section class="blog-box" id="homeBlogBox" style="width: 100%;">
+    <h2 id="homeBlogTitle">Waarom ik hbo-ICT heb gekozen</h2>
+    <p id="homeBlogText">Ga naar blog voor meer!</p>
+</section>
 
     <section class="quote-line" aria-label="Weer in Den Haag">
     <p id="weer-text">Weer laden…</p>
@@ -59,5 +57,23 @@
     </footer>
     <script src="doc.js/contrast.js" defer></script>
     <script src="doc.js/api.js" defer></script>
+    <script>
+    let currentHomeBlog = 1;
+
+    const homeBlogTitle = document.getElementById("homeBlogTitle");
+    const homeBlogText = document.getElementById("homeBlogText");
+    function switchHomeBlog() {
+        if (currentHomeBlog === 1) {
+            currentHomeBlog = 2;
+            homeBlogTitle.textContent = "Hoe ik projecten aanpak";
+            homeBlogText.textContent = "Ga naar blog voor meer!";
+        } else {
+            currentHomeBlog = 1;
+            homeBlogTitle.textContent = "Waarom ik hbo-ICT heb gekozen";
+            homeBlogText.textContent = "Ga naar blog voor meer!";
+        }
+    }
+    setInterval(switchHomeBlog, 4000); //ai
+</script>
 </body>
 </html>
