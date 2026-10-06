@@ -342,3 +342,76 @@ form.content-box button.btn:hover {
     line-height: 1.5;
     margin: 0;
 }
+
+#contrast-toggle {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.navbar ul li:last-child {
+    margin-left: auto;
+}
+
+#contrast-toggle:hover {
+    background-color: #eee;
+}
+
+/* colourblind mode */
+body.hoog-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+body.hoog-contrast .navbar,
+body.hoog-contrast .welkom-box,
+body.hoog-contrast .content-box,
+body.hoog-contrast .projects-box,
+body.hoog-contrast .blog-box,
+body.hoog-contrast .foto-box,
+body.hoog-contrast .overmij-foto-box,
+body.hoog-contrast article.project-item,
+body.hoog-contrast footer {
+    background-color: #000;
+    border: 2px solid #fff;
+}
+
+body.hoog-contrast h1,
+body.hoog-contrast h2,
+body.hoog-contrast h3,
+body.hoog-contrast p,
+body.hoog-contrast label,
+body.hoog-contrast a,
+body.hoog-contrast .quote-line p {
+    color: #fff;
+}
+
+body.hoog-contrast .btn,
+body.hoog-contrast button.btn,
+body.hoog-contrast #contrast-toggle {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #fff;
+}
+
+body.hoog-contrast input,
+body.hoog-contrast textarea,
+body.hoog-contrast select {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+body.hoog-contrast .project-afbeelding {
+    border: 2px solid #fff;
+}
+
+body.hoog-contrast span[role="alert"] {
+    color: #ff6b6b;
+}
