@@ -152,19 +152,41 @@ article.blog-preview p {
 }
 
 article.project-item {
-    background-color: white;
+    background-color: rgb(173, 203, 227);
+    border: 0.5rem solid #fff;
+    border-radius: 2rem;
     padding: 2%;
-    border-radius: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 article.project-item h2 {
-    margin: 0 0 1%;
-    color: #222;
+    margin: 0 0 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    flex-basis: 100%;
 }
 
 article.project-item p {
-    margin: 0;
-    color: #333;
+    margin: 0 0 0.8rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.project-afbeelding {
+    width: 100%;
+    max-width: 70%;
+    max-height: 40vh;
+    height: auto;
+    border-radius: .8rem;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.project-afbeelding-wrapper {
+    flex: 0 0 35%;
+    max-width: 35%;
 }
 
 footer {
@@ -214,4 +236,109 @@ footer {
         width: 50%;
         height: auto;
     }
+}
+
+/* ============================================
+   Formulier (buiten de media query!)
+   ============================================ */
+
+form.content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Kop van het formulier: wit, net als "Contact" */
+form.content-box h2 {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+}
+
+/* Labels: wit, net als de andere paragrafen */
+form.content-box label {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    font-family: inherit;
+}
+
+/* Invoervelden */
+form.content-box input,
+form.content-box textarea {
+    padding: 0.8rem;
+    border-radius: 0.6rem;
+    border: 1px solid #fff;
+    font-size: 1.1rem;
+    font-family: inherit;
+    width: 100%;
+    background-color: #fff;
+    color: #222;
+}
+
+form.content-box textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* Ongeldige velden */
+form.content-box input[aria-invalid="true"],
+form.content-box textarea[aria-invalid="true"] {
+    border: 2px solid #b00020;
+    background-color: #fff5f5;
+}
+
+/* Foutmelding per veld: wit, valt op op het blauwe vlak */
+form.content-box span[role="alert"] {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    min-height: 1.2em;
+}
+
+/* Bevestiging / status */
+#form-status {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* Verzendknop: precies zoals de LinkedIn/E-mail-knop */
+form.content-box button.btn {
+    display: inline-block;
+    background-color: white;
+    color: rgb(173, 203, 227);
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+form.content-box button.btn:hover {
+    background-color: #eee;
+}
+
+.quote-line {
+    max-width: 800px;
+    margin: 2rem auto 1rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.quote-line p {
+    color: #555;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
 }

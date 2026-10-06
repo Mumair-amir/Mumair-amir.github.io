@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Home – Umair Amir</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="over-mij.html">Over mij</a></li>
-            <li><a href="projecten.html">Projecten</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navbar" aria-label="Hoofdnavigatie">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="over-mij.html">Over mij</a></li>
+                <li><a href="projecten.html">Projecten</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
 
@@ -32,51 +34,30 @@
                 </div>
             </div>
 
-            <aside class="foto-box">
+            <div class="foto-box">
                 <img src="yorkpic.jpeg" alt="Foto van mij">
-            </aside>
+            </div>
 
         </div>
 
-<section class="blog-box" id="homeBlogBox" style="width: 100%;">
+        <section class="blog-box" id="homeBlogBox">
+            <h2>Uitgelicht blogbericht</h2>
+            <p><strong>Waarom ik hbo-ICT heb gekozen</strong></p>
+            <p>Ik vond het super interessant hoe je alles kunt maken met code…</p>
+            <a href="blog.html" class="btn">Lees meer →</a>
+        </section>
 
-    <h2 id="homeBlogTitle">Waarom ik hbo‑ICT heb gekozen</h2>
-
-    <p id="homeBlogText">
-        Ga naar blog voor meer!
-    </p>
-
+    <section class="quote-line" aria-label="Weer in Den Haag">
+    <p id="weer-text">Weer laden…</p>
 </section>
 
-<script>
-    let currentHomeBlog = 1;
+    </main>
 
-    const homeBlogTitle = document.getElementById("homeBlogTitle");
-    const homeBlogText = document.getElementById("homeBlogText");
+    <footer>
+        <p>© 2026 Umair Amir</p>
+    </footer>
 
-    function switchHomeBlog() {
-        if (currentHomeBlog === 1) {
-            currentHomeBlog = 2;
-
-            homeBlogTitle.textContent = "Hoe ik projecten aanpak";
-            homeBlogText.textContent =
-                "Ga naar blog voor meer!";
-        } else {
-            currentHomeBlog = 1;
-
-            homeBlogTitle.textContent = "Waarom ik hbo‑ICT heb gekozen";
-            homeBlogText.textContent =
-                "Ga naar blog voor meer!";
-        }
-    }
-
-    setInterval(switchHomeBlog, 4000); //AI//
-</script>
-   <script src="js/api.js" defer></script>
-</main>
-<footer>
-    <p>© 2026 Umair Amir</p>
-</footer>
+    <script src="doc.js/api.js" defer></script>
 
 </body>
 </html>

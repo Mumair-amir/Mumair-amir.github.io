@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projecten</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -21,70 +21,26 @@
 </header>
 
 <main>
+    <div class="projects-box">
+        <h1>Projecten</h1>
 
-    <div class="top-flex">
-
-        <div class="projects-box" id="projectBox">
-            <h1 id="projectTitle">Project 1 — Smart Telefoon Tas</h1>
-            <p id="projectText">
-                Een slimme telefoontas die automatisch detecteert wanneer een telefoon wordt geplaatst.
-                De tas registreert aanwezigheid, tijdstippen en koppelt deze gegevens aan een database.
-                Ideaal voor scholen of werkplekken waar aanwezigheid gecontroleerd moet worden.
-            </p>
-
-            <div class="welkom-buttons">
-                <button class="btn" id="nextBtn">Volgende ➜</button>
-            </div>
-        </div>
-
-        <aside class="foto-box">
-            <img id="projectImage" src="smarttas.jpeg" alt="Smart Telefoon Tas">
-        </aside>
-
+       <div class="project-filter">
+    <label for="sorteerSelect">Sorteer op datum:</label>
+    <select id="sorteerSelect">
+        <option value="nieuw-oud">Nieuw → oud</option>
+        <option value="oud-nieuw">Oud → nieuw</option>
+    </select>
+</div>
     </div>
 
+    <div class="projects-list" id="projectenlijst"></div>
 </main>
 
-<script>
-    let currentProject = 1;
-
-    const title = document.getElementById("projectTitle");
-    const text = document.getElementById("projectText");
-    const image = document.getElementById("projectImage");
-
-    document.getElementById("nextBtn").addEventListener("click", () => {
-        if (currentProject === 1) {
-            currentProject = 2;
-
-            title.textContent = "Project 2 — Hotel Simulatie";
-            text.textContent =
-                "Een uitgebreide simulatie van een hotel waarin verschillende events kunnen plaatsvinden. " +
-                "Gasten checken in en uit, schoonmakers onderhouden kamers, klanten hebben voedsel nodig, " +
-                "en noodsituaties zoals brand of evacuatie kunnen optreden. De simulatie bevat een event-systeem " +
-                "en movement-engine.";
-
-            image.src = "Hotelsc.jpeg";
-            image.alt = "Hotel Simulatie";
-
-        } else {
-            currentProject = 1;
-
-            title.textContent = "Project 1 — Smart Telefoon Tas";
-            text.textContent =
-                "Een slimme telefoontas die automatisch detecteert wanneer een telefoon wordt geplaatst. " +
-                "De tas registreert aanwezigheid, tijdstippen en koppelt deze gegevens aan een database. " +
-                "Ideaal voor scholen of werkplekken waar aanwezigheid gecontroleerd moet worden.";
-
-            image.src = "EVI.jpeg";
-            image.alt = "Smart Telefoon Tas";
-        }
-    });
-</script>
-
-<script src="js/projecten.js" defer></script>
-
-</body>
 <footer>
     <p>© 2026 Umair Amir</p>
 </footer>
+
+<script src="doc.js/projecten.js" defer></script>
+
+</body>
 </html>

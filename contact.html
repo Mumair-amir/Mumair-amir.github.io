@@ -20,27 +20,43 @@
         </nav>
     </header>
 
-    <main>
+   <main>
+    <div class="content-box">
+        <h1>Contact</h1>
+        <p>Neem contact op met mij! Hieronder vind je mijn LinkedIn en e-mail Of gebruik de contactformulier hieronder.</p>
 
-        <div class="top-flex">
-
-            <div class="content-box">
-                <h1>Contact</h1>
-                <p>Neem contact op met mij! Hieronder vind je mijn LinkedIn en e‑mail.</p>
-
-                <div class="welkom-buttons">
-                    <a href="https://www.linkedin.com/in/umair-amir-a96643387/" class="btn" target="_blank">LinkedIn</a>
-                    <a href="mailto:umair.m.amir@gmail.com" class="btn">E‑mail</a>
-                </div>
-            </div>
-
+        <div class="welkom-buttons">
+            <a href="https://www.linkedin.com/in/umair-amir-a96643387/" class="btn" target="_blank">LinkedIn</a>
+            <a href="mailto:umair.m.amir@gmail.com" class="btn">E-mail</a>
         </div>
+    </div>
 
-        <script src="js/formulier.js" defer></script>
+    <form id="contact-form" class="content-box" novalidate>
+        <h2>Stuur een bericht</h2>
 
-    </main>
+        <label for="naam">Naam</label>
+        <input id="naam" name="naam" required minlength="2"
+               aria-describedby="naam-error" aria-invalid="false">
+        <span id="naam-error" role="alert"></span>
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required
+               aria-describedby="email-error" aria-invalid="false">
+        <span id="email-error" role="alert"></span>
+
+        <label for="bericht">Bericht</label>
+        <textarea id="bericht" name="bericht" required minlength="10"
+                  aria-describedby="bericht-error" aria-invalid="false"></textarea>
+        <span id="bericht-error" role="alert"></span>
+
+        <button type="submit" class="btn">Versturen</button>
+        <div id="form-status" aria-live="polite"></div>
+    </form>
+</main>
     <footer>
     <p>© 2026 Umair Amir</p>
+    <script src="doc.js/formulier.js" defer></script>
+
 </footer>
 </body>
 </html>
