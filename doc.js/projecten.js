@@ -27,30 +27,30 @@ const projecten = [
 ];
 
 // Elementen ophalen
-const lijst = document.getElementById("projectenlijst");
+const lijst = document.getElementById("projectenlijst"); //zoekt het element met dat id
 const sorteerSelect = document.getElementById("sorteerSelect");
 
 // Functie 1: maakt één projectkaart
 function maakProjectKaart(project) {
-    const kaart = document.createElement("article");
-    kaart.classList.add("project-item");
+    const kaart = document.createElement("article"); //maakt nieuw article element aan in geheugen
+    kaart.classList.add("project-item"); //Geeft het element de CSS-klasse
 
-    const kop = document.createElement("h2");
-    kop.textContent = project.titel;
-    kaart.appendChild(kop);
+    const kop = document.createElement("h2");//maakt aan
+    kop.textContent = project.titel; // zet titel erin
+    kaart.appendChild(kop); //stopt in kaart
 
     // Datum
     const datum = document.createElement("p");
     datum.classList.add("project-datum");
     const time = document.createElement("time");
-    time.setAttribute("datetime", project.sorteerdatum);
-    time.textContent = project.datumTekst;
+    time.setAttribute("datetime", project.sorteerdatum);//zet machine leesbare date
+    time.textContent = project.datumTekst;//leesbaar date
     datum.appendChild(time);
     kaart.appendChild(datum);
 
     // Afbeelding (alleen als die er is)
     if (project.afbeelding) {
-        const img = document.createElement("img");
+        const img = document.createElement("img"); //maakt
         img.src = project.afbeelding;
         img.alt = project.alt;
         img.classList.add("project-afbeelding");
@@ -69,7 +69,7 @@ function maakProjectKaart(project) {
 function renderProjecten(lijstVanProjecten) {
     lijst.innerHTML = ""; // lijst leegmaken
 
-    lijstVanProjecten.forEach(function (project) {
+    lijstVanProjecten.forEach(function (project) { //loopt door de array van projecten en voert uit
         const kaart = maakProjectKaart(project);
         lijst.appendChild(kaart);
     });
@@ -77,18 +77,18 @@ function renderProjecten(lijstVanProjecten) {
 
 // Functie 3: sorteert en rendert
 function sorteerEnRender() {
-    const keuze = sorteerSelect.value;
-    const gesorteerd = [...projecten]; // kopie, zodat origineel niet verandert
+    const keuze = sorteerSelect.value; // nieuw-oud of oud-nieuw
+    const gesorteerd = [...projecten]; // kopie, zodat origineel niet verandert, zet ze in een nieuw array
 
-    gesorteerd.sort(function (a, b) {
-        if (keuze === "nieuw-oud") {
+    gesorteerd.sort(function (a, b) { // vergelijkt a en b
+        if (keuze === "nieuw-oud") { // precies gelijk aan
             return b.sorteerdatum.localeCompare(a.sorteerdatum);
         } else {
-            return a.sorteerdatum.localeCompare(b.sorteerdatum);
+            return a.sorteerdatum.localeCompare(b.sorteerdatum);//vergelijkt twee teksten en geeft negatief nul of positief terug
         }
     });
 
-    renderProjecten(gesorteerd);
+    renderProjecten(gesorteerd);//tonen
 }
 
 // Event listener op de select

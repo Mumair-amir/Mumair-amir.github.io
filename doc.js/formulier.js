@@ -1,4 +1,4 @@
-const form = document.querySelector("#contact-form");
+const form = document.querySelector("#contact-form");//zoekt met een CSS-selector
 
 const velden = [
     { id: "naam", boodschap: "Vul minimaal 2 tekens in." },
@@ -7,17 +7,17 @@ const velden = [
 ];
 
 function valideerVeld(veld) {
-    const input = document.querySelector(`#${veld.id}`);
-    const foutmelding = document.querySelector(`#${veld.id}-error`);
-    const geldig = input.checkValidity();
+    const input = document.querySelector(`#${veld.id}`); //een waarde in een tekst plakken
+    const foutmelding = document.querySelector(`#${veld.id}-error`);//
+    const geldig = input.checkValidity();//checkt regels van html
 
-    input.setAttribute("aria-invalid", String(!geldig));
-    foutmelding.textContent = geldig ? "" : veld.boodschap;
+    input.setAttribute("aria-invalid", String(!geldig)); // checkt en meldt fout
+    foutmelding.textContent = geldig ? "" : veld.boodschap; // geldig boodschap wis dan alles
 
     return geldig;
 }
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) => { //een korte schrijfwijze van een functie
     event.preventDefault();
 
     const alleGeldig = velden.map(valideerVeld).every(Boolean);
