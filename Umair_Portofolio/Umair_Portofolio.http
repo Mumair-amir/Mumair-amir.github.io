@@ -1,0 +1,6 @@
+@Umair_Portofolio_HostAddress = http://localhost:5220
+
+GET {{Umair_Portofolio_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
