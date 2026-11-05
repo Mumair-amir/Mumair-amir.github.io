@@ -11,7 +11,7 @@ public class BlogpostService : IBlogpostService
     public async Task<IEnumerable<BlogpostDto>> GetAllAsync()
     {
         var blogposts = await _context.Blogposts.ToListAsync();
-        return blogposts.Select(ToDto);
+        return blogposts.Select(ToDto); //hier gaat ent naar dto//
     }
     public async Task<BlogpostDto?> GetByIdAsync(int id)
     {
