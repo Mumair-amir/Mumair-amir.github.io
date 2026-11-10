@@ -31,7 +31,7 @@ public class ProjectService : IProjectService
             Datum = dto.Datum
         };
         _context.Projects.Add(project);
-        await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync(); //schrijft de wijzigingen naar SQL Server
         return ToDto(project);
     }
     public async Task<bool> UpdateAsync(int id, ProjectUpdateDto dto)

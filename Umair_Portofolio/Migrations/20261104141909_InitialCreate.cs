@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Umair_Portofolio.Migrations
+namespace Umair_Portofolio.Migrations //beschrijft hoe de database eruit moet zien
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
-        protected override void Up(MigrationBuilder migrationBuilder)
+        protected override void Up(MigrationBuilder migrationBuilder) //aanmaken//
         {
             migrationBuilder.CreateTable(
                 name: "Blogposts",
@@ -45,7 +45,7 @@ namespace Umair_Portofolio.Migrations
         }
 
         /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
+        protected override void Down(MigrationBuilder migrationBuilder) //wijzigingen ongedaan maken//
         {
             migrationBuilder.DropTable(
                 name: "Blogposts");

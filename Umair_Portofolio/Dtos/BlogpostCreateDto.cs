@@ -6,5 +6,5 @@ public class BlogpostCreateDto
     [Required] public string Inhoud { get; set; } = string.Empty;
     public DateTime Publicatiedatum { get; set; }
 }
-//dto: klassen die alleen velden bevatten die een api mag ontvangen en teruggeven//
+//klassen die alleen velden bevatten die een api mag ontvangen en teruggeven//
 // create is de invoer voor POST. (geen Id  db kiest dat)//

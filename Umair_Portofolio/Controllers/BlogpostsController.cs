@@ -3,8 +3,8 @@ using Umair_Portofolio.Dtos;
 using Umair_Portofolio.Services;
 
 namespace Umair_Portofolio.Controllers;
-
-[ApiController]
+// (controller laag)HTTP regelen en resultaat kiezen
+[ApiController] //markeert de klasse als API-controller en zet validatie aan//
 [Route("api/[controller]")]
 public class BlogpostsController : ControllerBase
 {
@@ -15,7 +15,7 @@ public class BlogpostsController : ControllerBase
         _service = service;
     }
 
-    [HttpGet]
+    [HttpGet] //met async en await hoeft de server niet te wachten op de database//
     public async Task<ActionResult<IEnumerable<BlogpostDto>>> GetAll()
     {
         return Ok(await _service.GetAllAsync());
@@ -33,7 +33,8 @@ public class BlogpostsController : ControllerBase
     public async Task<ActionResult<BlogpostDto>> Create(BlogpostCreateDto dto)
     {
         var created = await _service.CreateAsync(dto);
-        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created); 
+        //201 terugegeven en vertelt waar de item optehalen is//
     }
 
     [HttpPut("{id}")]

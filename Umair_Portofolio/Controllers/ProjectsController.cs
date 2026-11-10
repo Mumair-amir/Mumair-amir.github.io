@@ -3,7 +3,7 @@ using Umair_Portofolio.Dtos;
 using Umair_Portofolio.Services;
 
 namespace Umair_Portofolio.Controllers;
-
+// HTTP regelen en resultaat kiezen
 [ApiController]
 [Route("api/[controller]")]
 public class ProjectsController : ControllerBase
