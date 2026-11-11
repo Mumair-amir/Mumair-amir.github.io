@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Umair_Portofolio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0ea09958e85ad357893c2445ac1551172ae7fa0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b1935f706f0d30ec2e01ce982ac5cd1e14dd39d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Umair_Portofolio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Umair_Portofolio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
