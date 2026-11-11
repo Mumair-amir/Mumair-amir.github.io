@@ -1,4 +1,5 @@
 namespace Umair_Portofolio.Models; //entiteit voor db en ef core//
+//weergave van databasetabel in code//
 public class Blogpost
 {
      public int Id { get; set; }

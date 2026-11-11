@@ -1,5 +1,6 @@
-namespace Umair_Portofolio.Models;
+namespace Umair_Portofolio.Models;//entiteit voor db en ef core//
 
+//weergave van databasetabel in code//
 public class Project
 {
     public int Id { get; set; }

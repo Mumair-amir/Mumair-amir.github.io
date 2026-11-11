@@ -1,6 +1,6 @@
 using Umair_Portofolio.Dtos;
 namespace Umair_Portofolio.Services;
-public interface IBlogpostService
+public interface IBlogpostService //welke functie moet het hebben 
 {
     Task<IEnumerable<BlogpostDto>> GetAllAsync();
     Task<BlogpostDto?> GetByIdAsync(int id);

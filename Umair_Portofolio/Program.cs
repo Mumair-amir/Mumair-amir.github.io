@@ -9,11 +9,11 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>  
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); //(config ef core om sql te gebruiken)
 builder.Services.AddScoped<IProjectService, ProjectService>();
-builder.Services.AddScoped<IBlogpostService, BlogpostService>(); 
+builder.Services.AddScoped<IBlogpostService, BlogpostService>(); // DI instellen//
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+var app = builder.Build(); //bouwt de app op basis van de configuratie in builder
 
 if (app.Environment.IsDevelopment())
 {

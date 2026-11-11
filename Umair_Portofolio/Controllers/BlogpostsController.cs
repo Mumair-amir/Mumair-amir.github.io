@@ -3,14 +3,15 @@ using Umair_Portofolio.Dtos;
 using Umair_Portofolio.Services;
 
 namespace Umair_Portofolio.Controllers;
-// (controller laag)HTTP regelen en resultaat kiezen
+//controller van blogposts
+// (controller laag)HTTP ontvangen en teruggeven en resultaat kiezen
 [ApiController] //markeert de klasse als API-controller en zet validatie aan//
 [Route("api/[controller]")]
 public class BlogpostsController : ControllerBase
 {
     private readonly IBlogpostService _service;
 
-    public BlogpostsController(IBlogpostService service)
+    public BlogpostsController(IBlogpostService service) //DI .net levert service//
     {
         _service = service;
     }
@@ -21,7 +22,7 @@ public class BlogpostsController : ControllerBase
         return Ok(await _service.GetAllAsync());
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}")] //reageert op een GET req URL met ID//
     public async Task<ActionResult<BlogpostDto>> GetById(int id)
     {
         var blogpost = await _service.GetByIdAsync(id);
@@ -38,11 +39,13 @@ public class BlogpostsController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, BlogpostUpdateDto dto)
+    public async Task<IActionResult> Update(int id, BlogpostUpdateDto dto) 
+                 // werkt asychroon en geeft HTTP antwoord terug//
     {
         var updated = await _service.UpdateAsync(id, dto);
         if (!updated) return NotFound();
-        return NoContent();
+        return NoContent(); //204 geen inhoud  
+        //Geeft HTTP code terug 
     }
 
     [HttpDelete("{id}")]

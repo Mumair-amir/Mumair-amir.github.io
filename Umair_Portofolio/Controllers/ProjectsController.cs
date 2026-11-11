@@ -3,29 +3,30 @@ using Umair_Portofolio.Dtos;
 using Umair_Portofolio.Services;
 
 namespace Umair_Portofolio.Controllers;
-// HTTP regelen en resultaat kiezen
-[ApiController]
+//controller van projecten
+// (controller laag)HTTP ontvangen en teruggeven en resultaat kiezen
+[ApiController] //markeert de klasse als API-controller en zet validatie aan//
 [Route("api/[controller]")]
 public class ProjectsController : ControllerBase
 {
     private readonly IProjectService _service;
 
-    public ProjectsController(IProjectService service)
+    public ProjectsController(IProjectService service) //DI .net levert service//
     {
         _service = service;
     }
 
-    [HttpGet]
+    [HttpGet] //met async en await hoeft de server niet te wachten op de database//
     public async Task<ActionResult<IEnumerable<ProjectDto>>> GetAll()
     {
         return Ok(await _service.GetAllAsync());
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}")] //reageert op een GET req URL met ID//
     public async Task<ActionResult<ProjectDto>> GetById(int id)
     {
         var project = await _service.GetByIdAsync(id);
-        if (project is null) return NotFound();
+        if (project is null) return NotFound(); //404 niet gevonden
         return Ok(project);
     }
 

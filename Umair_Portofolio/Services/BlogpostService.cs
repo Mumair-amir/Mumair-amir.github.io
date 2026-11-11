@@ -4,7 +4,7 @@ using Umair_Portofolio.Dtos;
 using Umair_Portofolio.Models;
 namespace Umair_Portofolio.Services;
 // (service laag) CRUD logica en mapping van entiteit naar dto//
-public class BlogpostService : IBlogpostService
+public class BlogpostService : IBlogpostService //implementeert interface
 {
     private readonly AppDbContext _context;
     public BlogpostService(AppDbContext context)
@@ -15,7 +15,7 @@ public class BlogpostService : IBlogpostService
         return blogposts.Select(ToDto); 
         //hier gaat(omzetting) ent naar dto//
     }
-    public async Task<BlogpostDto?> GetByIdAsync(int id)
+    public async Task<BlogpostDto?> GetByIdAsync(int id)  //omzetting aanroepen van entiteit naar dto//
     {
         var blogpost = await _context.Blogposts.FindAsync(id);
         return blogpost is null ? null : ToDto(blogpost);
@@ -28,7 +28,7 @@ public class BlogpostService : IBlogpostService
             Inhoud = dto.Inhoud,
             Publicatiedatum = dto.Publicatiedatum
         };
-        _context.Blogposts.Add(blogpost);
+        _context.Blogposts.Add(blogpost); //ent naar database
         await _context.SaveChangesAsync(); //schrijft de wijzigingen naar SQL Server
         return ToDto(blogpost);
     }
