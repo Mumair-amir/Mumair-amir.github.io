@@ -1,10 +1,11 @@
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Umair_Portofolio.Models;
-//de EF core communiceert met de database
+
 namespace Umair_Portofolio.Data;
-//praat met SQL Server via EF Core
-// datatoegang hoort niet bij de HTTP laag 
-public class AppDbContext : DbContext
+
+public class AppDbContext : IdentityDbContext<IdentityUser> // is een dbcontext van mc met de usertabellen ingebouwd, aspuser,roles etc
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

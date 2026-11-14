@@ -166,3 +166,4 @@ C:\Users\umair\SE3proj\Umair_Portofolio\Umair_Portofolio\obj\Debug\net10.0\refin
 C:\Users\umair\SE3proj\Umair_Portofolio\Umair_Portofolio\obj\Debug\net10.0\Umair_Portofolio.pdb
 C:\Users\umair\SE3proj\Umair_Portofolio\Umair_Portofolio\obj\Debug\net10.0\Umair_Portofolio.genruntimeconfig.cache
 C:\Users\umair\SE3proj\Umair_Portofolio\Umair_Portofolio\obj\Debug\net10.0\ref\Umair_Portofolio.dll
+C:\Users\umair\SE3proj\Umair_Portofolio\Umair_Portofolio\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
