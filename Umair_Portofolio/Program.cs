@@ -9,8 +9,15 @@ builder.Services.AddControllers();
 // dependancy injection registreren //
 builder.Services.AddDbContext<AppDbContext>(options =>  
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); //(config ef core om sql te gebruiken)
-    builder.Services.AddIdentity<IdentityUser, IdentityRole>() //regis Identity//
-    .AddEntityFrameworkStores<AppDbContext>();
+    builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();//regis Identity//
+builder.Services.ConfigureApplicationCookie(options =>  //past de instellingen aan van de cookie die AddIdentity heeft aangemaakt.
+{options.Events.OnRedirectToLogin = context =>
+{ context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+return Task.CompletedTask; };
+options.Events.OnRedirectToAccessDenied=context=>
+{context.Response.StatusCode=StatusCodes.Status403Forbidden;
+return Task.CompletedTask;};
+});
 builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<IBlogpostService, BlogpostService>(); // DI instellen//
 builder.Services.AddEndpointsApiExplorer();
@@ -25,7 +32,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
+app.UseAuthentication();   //leest de cookie
+app.UseAuthorization();    //controleert de rol
 app.MapControllers();
 
 app.Run();
