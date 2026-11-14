@@ -22,8 +22,11 @@ builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<IBlogpostService, BlogpostService>(); // DI instellen//
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
-var app = builder.Build(); //bouwt de app op basis van de configuratie in builder
+var app = builder.Build(); //bouwt de app op basis van de configuratie in builder  // rollseeder aanroepen
+
+await RoleSeeder.SeedAsync(app.Services);
 
 if (app.Environment.IsDevelopment())
 {
