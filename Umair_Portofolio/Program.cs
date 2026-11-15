@@ -40,3 +40,4 @@ app.UseAuthorization();    //controleert de rol
 app.MapControllers();
 
 app.Run();
+public partial class Program { } //patial voegt lege uitbreiding toe aan klasse//
