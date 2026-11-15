@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Umair_Portofolio.Dtos;
 using Umair_Portofolio.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Umair_Portofolio.Controllers;
 //controller van projecten
@@ -16,12 +17,14 @@ public class ProjectsController : ControllerBase
         _service = service;
     }
 
+    [AllowAnonymous]
     [HttpGet] //met async en await hoeft de server niet te wachten op de database//
     public async Task<ActionResult<IEnumerable<ProjectDto>>> GetAll()
     {
         return Ok(await _service.GetAllAsync());
     }
 
+    [AllowAnonymous] //route is voor iedereen, ook zonder login  
     [HttpGet("{id}")] //reageert op een GET req URL met ID//
     public async Task<ActionResult<ProjectDto>> GetById(int id)
     {
@@ -30,6 +33,7 @@ public class ProjectsController : ControllerBase
         return Ok(project);
     }
 
+    [Authorize(Roles = "Editor,Admin")]
     [HttpPost]
     public async Task<ActionResult<ProjectDto>> Create(ProjectCreateDto dto)
     {
@@ -37,6 +41,7 @@ public class ProjectsController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
     }
 
+    [Authorize(Roles = "Editor,Admin")]
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, ProjectUpdateDto dto)
     {
@@ -45,6 +50,7 @@ public class ProjectsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize(Roles = "Editor,Admin")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

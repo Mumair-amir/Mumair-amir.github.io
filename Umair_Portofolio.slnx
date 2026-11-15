@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Umair_Portofolio.Tests/Umair_Portofolio.Tests.csproj" />
+  <Project Path="Umair_Portofolio/Umair_Portofolio.csproj" />
+</Solution>

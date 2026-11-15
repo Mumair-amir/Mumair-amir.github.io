@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Umair_Portofolio.Dtos;
 using Umair_Portofolio.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Umair_Portofolio.Controllers;
 //controller van blogposts
@@ -16,12 +17,14 @@ public class BlogpostsController : ControllerBase
         _service = service;
     }
 
+    [AllowAnonymous]
     [HttpGet] //met async en await hoeft de server niet te wachten op de database//
     public async Task<ActionResult<IEnumerable<BlogpostDto>>> GetAll()
     {
         return Ok(await _service.GetAllAsync());
     }
 
+    [AllowAnonymous]  //route is voor iedereen, ook zonder login//
     [HttpGet("{id}")] //reageert op een GET req URL met ID//
     public async Task<ActionResult<BlogpostDto>> GetById(int id)
     {
@@ -30,6 +33,7 @@ public class BlogpostsController : ControllerBase
         return Ok(blogpost);
     }
 
+    [Authorize(Roles = "Editor,Admin")]
     [HttpPost]
     public async Task<ActionResult<BlogpostDto>> Create(BlogpostCreateDto dto)
     {
@@ -38,6 +42,7 @@ public class BlogpostsController : ControllerBase
         //201 terugegeven en vertelt waar de item optehalen is//
     }
 
+    [Authorize(Roles = "Editor,Admin")]
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, BlogpostUpdateDto dto) 
                  // werkt asychroon en geeft HTTP antwoord terug//
@@ -48,6 +53,7 @@ public class BlogpostsController : ControllerBase
         //Geeft HTTP code terug 
     }
 
+    [Authorize(Roles = "Editor,Admin")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
