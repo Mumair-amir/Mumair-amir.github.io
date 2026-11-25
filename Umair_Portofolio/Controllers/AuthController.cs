@@ -32,4 +32,10 @@ public class AuthController : ControllerBase
 
         return Ok(new { message = "Ingelogd" });
     }
+    [HttpPost("logout")]
+public async Task<IActionResult> Logout()
+{
+    await _service.LogoutAsync();
+    return NoContent();
+}
 }

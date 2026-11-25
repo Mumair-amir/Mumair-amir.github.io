@@ -21,8 +21,8 @@ public class AuthService : IAuthService
         var result = await _userManager.CreateAsync(user, dto.Password);
         if (!result.Succeeded) return result;
 
-        // Iedere nieuwe gebruiker krijgt altijd de rol Gast
         return await _userManager.AddToRoleAsync(user, "Gast");
+        // Iedere nieuwe gebruiker krijgt altijd de rol Gast
         
     }
      public async Task<bool> LoginAsync(LoginDto dto)
@@ -32,4 +32,8 @@ public class AuthService : IAuthService
 
         return result.Succeeded;
     }
+    public async Task LogoutAsync()
+{
+    await _signInManager.SignOutAsync();
+}
 }

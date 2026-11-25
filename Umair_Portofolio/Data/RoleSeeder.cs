@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 
 namespace Umair_Portofolio.Data;
-
+//maakt automatisch rollen met rolemanager
+//in database AspNetRoles
 public static class RoleSeeder
 {private static readonly string[] Roles = { "Gast", "Editor", "Admin" };
      public static async Task SeedAsync(IServiceProvider services)
