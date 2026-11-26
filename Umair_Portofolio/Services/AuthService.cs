@@ -21,13 +21,13 @@ public class AuthService : IAuthService
         var result = await _userManager.CreateAsync(user, dto.Password);
         if (!result.Succeeded) return result;
 
-        return await _userManager.AddToRoleAsync(user, "Gast");
+        return await _userManager.AddToRoleAsync(user, "Gast"); 
         // Iedere nieuwe gebruiker krijgt altijd de rol Gast
         
     }
      public async Task<bool> LoginAsync(LoginDto dto)
-    {
-        var result = await _signInManager.PasswordSignInAsync(
+    {                       //helpt met inloggen
+        var result = await _signInManager.PasswordSignInAsync( 
             dto.Email, dto.Password, isPersistent: false, lockoutOnFailure: false);
 
         return result.Succeeded;

@@ -14,7 +14,7 @@ public class BlogpostsApiTests
         _factory = factory;
     }
 
-    // ---------- hulpmethoden ----------
+    //  hulpmethoden 
 
     private static BlogpostCreateDto NieuweBlogpost() => new()
     {
@@ -38,7 +38,7 @@ public class BlogpostsApiTests
         return blogpost!;
     }
 
-    // ---------- GET ----------
+    //  GET 
 
     [Fact]
     public async Task GetBlogposts_ZonderLogin_GeeftOk()
@@ -106,7 +106,7 @@ public class BlogpostsApiTests
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
 
-    // ---------- POST ----------
+    //  POST
 
     [Fact]
     public async Task PostBlogpost_ZonderLogin_GeeftUnauthorized()
@@ -140,7 +140,7 @@ public class BlogpostsApiTests
     public async Task PostBlogpost_AlsEditorOfAdmin_MaaktBlogpostAan(string rol)
     {
         // Arrange
-        var client = await _factory.CreateClientAsync(rol);
+        var client = await _factory.CreateClientAsync(rol); //maakt gebruiker
         var nieuw = NieuweBlogpost();
 
         // Act
@@ -174,7 +174,7 @@ public class BlogpostsApiTests
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
 
-    // ---------- PUT ----------
+    //  PUT 
 
     [Theory]
     [InlineData(null, HttpStatusCode.Unauthorized)]
@@ -231,7 +231,7 @@ public class BlogpostsApiTests
         Assert.Equal(wijziging.Publicatiedatum, opgehaald.Publicatiedatum);
     }
 
-    // ---------- DELETE ----------
+    //  DELETE 
 
     [Theory]
     [InlineData(null, HttpStatusCode.Unauthorized)]

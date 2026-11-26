@@ -31,7 +31,7 @@ public class ApiFactory : WebApplicationFactory<Program>
             });
         });
     }
-        // rol = null geeft een anonieme client; anders een ingelogde gebruiker met die rol
+        // rol = null geeft een anonieme client, anders een ingelogde gebruiker met die rol
     public async Task<HttpClient> CreateClientAsync(string? rol)
     {
         var client = CreateClient();

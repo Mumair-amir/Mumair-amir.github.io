@@ -7,9 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // dependancy injection registreren //
+//ID services registreren
 builder.Services.AddDbContext<AppDbContext>(options =>  
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); //(config ef core om sql te gebruiken)
-    builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+    builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();//wachtwoord restricties zijn hier handig
     //regis Identity en opslaan via efcore//
 builder.Services.ConfigureApplicationCookie(options =>  //past de instellingen aan van de cookie die AddIdentity heeft aangemaakt.
 {options.Events.OnRedirectToLogin = context =>

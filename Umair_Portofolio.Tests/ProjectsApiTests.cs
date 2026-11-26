@@ -14,7 +14,7 @@ public class ProjectsApiTests
         _factory = factory;
     }
 
-    // ---------- hulpmethoden ----------
+    //  hulpmethoden 
 
     private static ProjectCreateDto NieuwProject() => new()
     {
@@ -43,7 +43,7 @@ public class ProjectsApiTests
         return project!;
     }
 
-    // ---------- GET ----------
+    // GET 
 
     [Fact]
     public async Task GetProjects_ZonderLogin_GeeftOk()
@@ -113,7 +113,7 @@ public class ProjectsApiTests
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
 
-    // ---------- POST ----------
+    //  POST
 
     [Fact]
     public async Task PostProject_ZonderLogin_GeeftUnauthorized()
@@ -147,7 +147,7 @@ public class ProjectsApiTests
     public async Task PostProject_AlsEditorOfAdmin_MaaktProjectAan(string rol)
     {
         // Arrange
-        var client = await _factory.CreateClientAsync(rol);
+        var client = await _factory.CreateClientAsync(rol); //maakt gebruiker
         var nieuw = NieuwProject();
 
         // Act
@@ -223,7 +223,7 @@ public class ProjectsApiTests
     {
         // Arrange
         var client = await _factory.CreateClientAsync(rol);
-        var aangemaakt = await MaakProjectAanAsync(client);
+        var aangemaakt = await MaakProjectAanAsync(client);//doet een POST en geeft het aangemaakte project terug
         var wijziging = Wijziging();
 
         // Act
@@ -240,7 +240,7 @@ public class ProjectsApiTests
         Assert.Equal(wijziging.Datum, opgehaald.Datum);
     }
 
-    // ---------- DELETE ----------
+    //  DELETE 
 
     [Theory]
     [InlineData(null, HttpStatusCode.Unauthorized)]
@@ -281,7 +281,7 @@ public class ProjectsApiTests
     {
         // Arrange
         var client = await _factory.CreateClientAsync(rol);
-        var aangemaakt = await MaakProjectAanAsync(client);
+        var aangemaakt = await MaakProjectAanAsync(client); //doet een POST en geeft het aangemaakte project terug
 
         // Act
         var response = await client.DeleteAsync($"/api/projects/{aangemaakt.Id}");
